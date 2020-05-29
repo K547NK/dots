@@ -9,7 +9,8 @@ sudo echo "dbus_enable="YES"" > /etc/rc.conf
 sudo echo "sddm_enable="YES"" > /etc/rc.conf
 
 #make directories for BSPWM and SXHKD
-mkdir ~/.config && cp -r .config/* ~/.config/
+mkdir ~/.config && 
+#cp -r .config/* ~/.config/
 mkdir -p ~/.config/bspwm && mkdir -p ~/.config/sxhkd
 cp /usr/local/share/examples/bspwm/bspwmrc ~/.config/bspwm
 cp /usr/local/share/examples/bspwm/sxhkdrc ~/.config/sxhkd
