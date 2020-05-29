@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #install both display manager and server also add window manager and compositor
-sudo pkg install bspwm sxhkd sddm compton feh lemonbar xorg hal scrot i3lock neofetch lynx vim feh zsh
+sudo pkg install bspwm sxhkd sddm compton feh lemonbar xorg hal scrot i3lock neofetch lynx vim feh zsh rofi
 
 #details
 sudo echo "hald_enable="YES"" > /etc/rc.conf
