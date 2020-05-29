@@ -19,9 +19,4 @@ cp /etc/X11/xinit/xinitrc ~/.xinitrc
 echo "sxhkd &" > ~/.xinitrc
 echo "exec bspwm" > ~/.xinitrc
 
-cp -r Manuals ~/
-cp -r Pictures ~/
-cp -r .vimrc ~/
-cp -r .Xresources ~/
-
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
