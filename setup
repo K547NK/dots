@@ -4,8 +4,10 @@
 sudo pkg install drm-kmod qutebrowser i3-gaps sddm compton feh xorg hal scrot polybar i3lock neofetch lynx vim feh zsh rofi ImageMagick7
 
 #details
-sudo mkdir -p /usr/share/sddm/faces/ && sudo cp -r ~/dotfiles/nigel.face.icon /usr/share/sddm/faces/
+sudo mkdir -p /usr/share/sddm/faces/ && sudo cp -r ~/dots/nigel.face.icon /usr/share/sddm/faces/
 mkdir ~/.config 
+mkdir ~/Documents
+cp -r H ~/Documents/
 cp -r .config/* ~/.config/
 cp .Xresources ~/
 cp .vimrc ~/
@@ -14,5 +16,5 @@ sudo echo 'hald_enable="YES"' > /etc/rc.conf
 sudo echo 'dbus_enable="YES"' > /etc/rc.conf 
 sudo echo 'sddm_enable="YES"' > /etc/rc.conf 
 sudo echo 'kld_list="/boot/modules/amdgpu.ko"' > /etc/rc.conf 
-
+sudo echo 'hw.syscons.disable=1' > /boot/loader.conf
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
