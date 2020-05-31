@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #install both display manager and server also add window manager and compositor
-sudo pkg install drm-kmod sddm compton feh xorg hal scrot polybar i3lock neofetch lynx vim feh zsh rofi
+sudo pkg install drm-kmod i3-gaps sddm compton feh xorg hal scrot polybar i3lock neofetch lynx vim feh zsh rofi ImageMagick7
 
 #details
 sudo echo 'hald_enable="YES"' > /etc/rc.conf &&
