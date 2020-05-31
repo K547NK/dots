@@ -8,7 +8,7 @@ sudo echo 'hald_enable="YES"' > /etc/rc.conf &&
 sudo echo 'dbus_enable="YES"' > /etc/rc.conf &&
 sudo echo 'sddm_enable="YES"' > /etc/rc.conf &&
 sudo echo 'kld_list="/boot/modules/amdgpu.ko"' > /etc/rc.conf &&
-sudo mkdir -p /usr/share/sddm/faces/ && sudo cp -r ~/dotfiles/nigel.face.icon /usr/share/faces/
+sudo mkdir -p /usr/share/sddm/faces/ && sudo cp -r ~/dotfiles/nigel.face.icon /usr/share/sddm/faces/
 
 mkdir ~/.config && 
 cp -r .config/* ~/.config/
