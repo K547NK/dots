@@ -5,14 +5,14 @@ sudo pkg install drm-kmod i3-gaps sddm compton feh xorg hal scrot polybar i3lock
 
 #details
 sudo mkdir -p /usr/share/sddm/faces/ && sudo cp -r ~/dotfiles/nigel.face.icon /usr/share/sddm/faces/
-mkdir ~/.config && 
+mkdir ~/.config 
 cp -r .config/* ~/.config/
 cp .Xresources ~/
 cp .vimrc ~/
 
-sudo echo 'hald_enable="YES"' > /etc/rc.conf &&
-sudo echo 'dbus_enable="YES"' > /etc/rc.conf &&
-sudo echo 'sddm_enable="YES"' > /etc/rc.conf &&
-sudo echo 'kld_list="/boot/modules/amdgpu.ko"' > /etc/rc.conf &&
+sudo echo 'hald_enable="YES"' > /etc/rc.conf 
+sudo echo 'dbus_enable="YES"' > /etc/rc.conf 
+sudo echo 'sddm_enable="YES"' > /etc/rc.conf 
+sudo echo 'kld_list="/boot/modules/amdgpu.ko"' > /etc/rc.conf 
 
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
