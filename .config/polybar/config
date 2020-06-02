@@ -1,0 +1,93 @@
+[colors]
+background = #cfccc0
+background-alt = #ddb1a8
+foreground = #7a7873
+foreground-alt = #555
+primary = #ffb52a
+red = #e00e1c
+green = #1db954
+
+[bar/misc]
+width = 8%
+height = 35
+offset-x = 2.7% 
+radius = 10
+background = ${colors.background}
+foreground = ${colors.foreground}
+line-size = 4
+line-color = #f00
+border-size = 10
+border-color = #00000000
+modules-left = date
+wm-restack = i3
+override-redirect = true
+
+[bar/middle]
+width = 40%
+height = 35
+offset-x = 30% 
+radius = 10
+background = ${colors.background}
+foreground = ${colors.foreground}
+line-size = 4
+line-color = #f00
+border-size = 10
+border-color = #00000000
+wm-restack = i3
+modules-center = i3
+override-redirect = true
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[bar/system]
+width = 8%
+height = 35
+offset-x = 89%
+radius = 10
+background = ${colors.background}
+foreground = ${colors.foreground}
+line-size = 4
+line-color = #f00
+border-size = 10
+border-color = #00000000
+wm-restack = i3
+override-redirect = true
+enable-ipc = true
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+pin-workspaces = true
+label-mode-padding = 2
+label-mode-foreground = ${colors.foreground}
+label-mode-background = ${colors.primary}
+; focused = Active workspace on focused monitor
+label-focused = %icon%
+label-focused-foreground = #25120e
+;label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.foreground}
+label-focused-padding = 2
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %icon% 
+label-unfocused-padding = 2
+label-unfocused-background = ${colors.background}
+; Another workspace active
+label-visible = %icon%
+label-visible-padding = 2
+;urgent
+label-urgent = %icon%
+label-urgent-padding = 2
+[module/date]
+type = internal/date
+interval = 10 
+format-foreground = ${colors.foreground-alt}
+date = "%d %b"
+time = %H:%M
+format-prefix-foreground = ${colors.foreground-alt}
+label = %date%, %time%
+label-padding-left = 4
+
+[settings]
+screenchange-reload = true
+

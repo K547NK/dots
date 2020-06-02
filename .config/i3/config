@@ -177,7 +177,7 @@ bar {
 #Custom bindings for favorite apps and settings
 
 
-bindsym Mod1+Shift+u exec xrandr --output eDP-1 --brightness 0.8
+bindsym Mod1+Shift+u exec xrandr --output DVI-D-1 --brightness 0.5
 bindsym Mod1+Shift+h exec xrandr --output HDMI-1 --brightness 0.8
 bindsym Mod1+r workspace $ws6; exec uxterm -e ranger 
 bindsym Mod1+Shift+m workspace $ws8;exec mbsync gmail ;exec uxterm -e neomutt
@@ -189,11 +189,13 @@ bindsym Mod1+w exec Waveform10
 bindsym Mod1+Shift+w exec qutebrowser https://web.whatsapp.com/
 exec feh --bg-scale ~/Pictures/wallpaper.jpg &
 exec compton &
-exec xrandr --output eDP-1 --brightness 0.5
+exec xrandr --output DVI-D-1 --brightness 0.8
 exec xrandr --output HDMI-1 --brightness 0.5
+exec spotifyd &
+exec sh ~/.config/polybar/launch
 exec sh ~/.config/i3/orientation.sh
 exec mbsync gmail.com &
-bindsym Print exec scrot ~/Pictures/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png && feh ~/Pictures/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
+bindsym Mod1+p exec scrot ~/Pictures/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png && feh ~/Pictures/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
 #Specific Application-Workspace Assignment
 assign [class="MuPDF"] $ws7
 assign [class="TelegramDesktop"] $ws5

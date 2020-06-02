@@ -26,3 +26,12 @@ settings:
     - utm_campaign
     - utm_term
     - utm_content
+  content.host_blocking.enabled:
+    global: false
+  content.host_blocking.lists:
+    global:
+    - https://easylist.to/easylist/easylist.txt
+    - https://easylist.to/easylist/easyprivacy.txt
+    - https://testpages.adblockplus.org/en/abp-testcase-subscription.txt
+
+
