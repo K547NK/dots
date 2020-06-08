@@ -5,7 +5,7 @@ sudo pkg install drm-kmod chromium i3-gaps sddm compton feh xorg hal scrot polyb
 
 #details
 sudo mkdir -p /usr/share/sddm/faces/ 
-sudo cp -r ~/dots/nigel.face.icon /usr/share/sddm/faces/
+sudo cp -r ~/freebsd/nigel.face.icon /usr/share/sddm/faces/
 
 mkdir ~/.config 
 mkdir ~/Documents
@@ -15,11 +15,11 @@ cp -r .config/* ~/.config/
 cp .Xresources ~/
 cp .vimrc ~/
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-su
-echo 'hald_enable="YES"' > /etc/rc.conf 
-echo 'dbus_enable="YES"' > /etc/rc.conf 
-echo 'sddm_enable="YES"' > /etc/rc.conf 
-echo 'kld_list="/boot/modules/amdgpu.ko"' > /etc/rc.conf 
-echo 'hw.syscons.disable=1' > /boot/loader.conf
+
+sudo echo 'hald_enable="YES"' > /etc/rc.conf 
+sudo echo 'dbus_enable="YES"' > /etc/rc.conf 
+sudo echo 'sddm_enable="YES"' > /etc/rc.conf 
+sudo echo 'kld_list="/boot/modules/amdgpu.ko"' > /etc/rc.conf 
+sudo echo 'hw.syscons.disable=1' > /boot/loader.conf
 
 
