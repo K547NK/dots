@@ -1,93 +1,55 @@
-[colors]
-background = #cfccc0
-background-alt = #ddb1a8
-foreground = #7a7873
-foreground-alt = #555
-primary = #ffb52a
-red = #e00e1c
-green = #1db954
-
-[bar/misc]
-width = 8%
-height = 35
-offset-x = 2.7% 
-radius = 10
-background = ${colors.background}
-foreground = ${colors.foreground}
-line-size = 4
-line-color = #f00
-border-size = 10
-border-color = #00000000
-modules-left = date
-wm-restack = i3
-override-redirect = true
-
 [bar/middle]
-width = 40%
 height = 35
-offset-x = 30% 
-radius = 10
-background = ${colors.background}
-foreground = ${colors.foreground}
 line-size = 4
-line-color = #f00
-border-size = 10
-border-color = #00000000
-wm-restack = i3
-modules-center = i3
-override-redirect = true
-cursor-click = pointer
-cursor-scroll = ns-resize
-
-[bar/system]
-width = 8%
-height = 35
-offset-x = 89%
-radius = 10
-background = ${colors.background}
-foreground = ${colors.foreground}
-line-size = 4
-line-color = #f00
-border-size = 10
-border-color = #00000000
-wm-restack = i3
-override-redirect = true
-enable-ipc = true
+border-size = 10 
+modules-center = date
+modules-left = i3
+modules-right = network   
+font-0 = "Noto Sans:size=11;1"
 
 [module/i3]
 type = internal/i3
-format = <label-state> <label-mode>
-index-sort = true
 pin-workspaces = true
-label-mode-padding = 2
-label-mode-foreground = ${colors.foreground}
-label-mode-background = ${colors.primary}
-; focused = Active workspace on focused monitor
-label-focused = %icon%
-label-focused-foreground = #25120e
-;label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.foreground}
-label-focused-padding = 2
-; unfocused = Inactive workspace on any monitor
-label-unfocused = %icon% 
-label-unfocused-padding = 2
-label-unfocused-background = ${colors.background}
-; Another workspace active
-label-visible = %icon%
-label-visible-padding = 2
-;urgent
-label-urgent = %icon%
-label-urgent-padding = 2
+enable-click = true
+enable-scroll = true
+wrapping-scrolling = true
+label-mode = %mode%
+
+[module/network]
+type = internal/network
+interface = wlp1s0
+interval = 3
+accumulate-stats = true
+format-connected = <ramp-signal> <label-connected>
+format-disconnected = <label-disconnected>
+format-packetloss = <animation-packetloss> <label-connected>
+ramp-signal-0 = 😱
+ramp-signal-1 = 😠
+ramp-signal-2 = 😒
+ramp-signal-3 = 😊
+ramp-signal-4 = 😃
+ramp-signal-5 = 😈
+; Only applies if <animation-packetloss> is used
+animation-packetloss-0 = ⚠
+animation-packetloss-0-foreground = #ffa64c
+animation-packetloss-1 = 📶
+animation-packetloss-1-foreground = #000000
+; Framerate in milliseconds
+animation-packetloss-framerate = 500
+label-connected = %essid% 
+
 [module/date]
 type = internal/date
 interval = 10 
-format-foreground = ${colors.foreground-alt}
 date = "%d %b"
 time = %H:%M
-format-prefix-foreground = ${colors.foreground-alt}
 label = %date%, %time%
 label-padding-left = 4
 
-[settings]
-screenchange-reload = true
+[module/pulseaudio]
+type = internal/pulseaudio
+sink = alsa_output.pci-0000_12_00.3.analog-stereo
+use-ui-max = true
+interval = 5
+
 
