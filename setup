@@ -9,10 +9,13 @@ sudo cp -r ~/freebsd/nigel.face.icon /usr/share/sddm/faces/
 
 mkdir ~/.config 
 mkdir ~/Documents
+mkdir -p ~/local/share/fonts
 
 cp -r H ~/Documents/
 cp -r .config/* ~/.config/
 cp .Xresources ~/
 cp .vimrc ~/
+cp -r ~/config/polybar/fonts/* ~/.local/share/fonts
+fc-cache -v
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
