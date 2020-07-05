@@ -1,0 +1,5 @@
+#!/bin/sh
+git config --global user.name 'Nigel Agwah'
+git config --global user.email 'nigel.agwah@gmail.com'
+
+cd ~/Documents/ && git clone https://github.com./K547NK/PythonScripts
