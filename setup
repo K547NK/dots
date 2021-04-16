@@ -1,5 +1,5 @@
 #!/bin/sh
-sudo pw user mod nigel -G wheel
+sudo pw user mod nigel -G wheel video
 #install both display manager and server also add window manager and compositor
 sudo pkg install drm-kmod chromium i3-gaps sddm compton feh xorg hal scrot polybar i3lock neofetch lynx vim feh zsh rofi ImageMagick7
 
