@@ -1,55 +1,155 @@
-[bar/middle]
-height = 35
-line-size = 4
-border-size = 10 
+[bar/main]
+override-redirect = true
+wm-restack = i3
+bottom = false
+height = 40
+padding-left-size = 12 
+padding-right-size = 12
+module-margin = 3 
+border-left-size = 12
+border-top-size = 12
+radius = 22.8
+dpi = 112
+font-0 = OpenSans-Bold:size=9:antialias=true;2
+font-1 = FontAwesome5Free:style=Solid:pixelsize=12:antialias=true;4
+font-2 = FontAwesome5Brands:style=Solid:pixelsize=12:antialias=true;4
+
+[bar/center]
+inherit = bar/main
+width = 400
+bottom = false 
 modules-center = date
-modules-left = i3
-modules-right = network   
-font-0 = "Noto Sans:size=11;1"
+enable-ipc = true
+offset-x = 750
+background = #fffff
+
+[bar/right]
+inherit = bar/main
+width = 350
+bottom = false 
+modules-center =  name
+enable-ipc = true
+offset-x = 1500
+background = #fffff
+
+[bar/left]
+inherit = bar/main
+bottom = false
+modules-center = i3 
+width = 500
+background = #80
+
+[module/battery]
+type = internal/battery
+full-at = 99
+battery = BAT0
+adapter = ADP1
+poll-interval = 1
+format-charging = <animation-charging>  <label-charging>
+format-discharging = <animation-discharging>  <label-discharging>
+label-charging = %percentage%%
+label-discharging = %percentage%%
+label-full = Full
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-3 = 
+animation-discharging-4 = 
+animation-discharging-framerate = 500000
+animation-charging-framerate = 500
 
 [module/i3]
 type = internal/i3
 pin-workspaces = true
-enable-click = true
-enable-scroll = true
-wrapping-scrolling = true
+wrapping-scroll = false
+index-sort = true
+format = <label-state> <label-mode>
 label-mode = %mode%
-
-[module/network]
-type = internal/network
-interface = wlp1s0
-interval = 3
-accumulate-stats = true
-format-connected = <ramp-signal> <label-connected>
-format-disconnected = <label-disconnected>
-format-packetloss = <animation-packetloss> <label-connected>
-ramp-signal-0 = 😱
-ramp-signal-1 = 😠
-ramp-signal-2 = 😒
-ramp-signal-3 = 😊
-ramp-signal-4 = 😃
-ramp-signal-5 = 😈
-; Only applies if <animation-packetloss> is used
-animation-packetloss-0 = ⚠
-animation-packetloss-0-foreground = #ffa64c
-animation-packetloss-1 = 📶
-animation-packetloss-1-foreground = #000000
-; Framerate in milliseconds
-animation-packetloss-framerate = 500
-label-connected = %essid% 
+label-separator = |
+label-separator-padding = 2
+label-separator-foreground = #00
+label-separator-background= #00
 
 [module/date]
 type = internal/date
-interval = 10 
-date = "%d %b"
+interval = 1
+date = %m/%d
 time = %H:%M
-label = %date%, %time%
-label-padding-left = 4
+format =    <label>
+label = %time%
 
-[module/pulseaudio]
-type = internal/pulseaudio
-sink = alsa_output.pci-0000_12_00.3.analog-stereo
-use-ui-max = true
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+format = <label>
+label =  %percentage%%
+
+[module/memory]
+type = internal/memory
+interval = 0.5
+format = <label> 
+label =   %percentage_used%%
+
+[module/network]
+type = internal/network
+interface = wlan0
 interval = 5
+accumulate-stats = true
+unknown-as-up = true
+format-connected = <label-connected>
+format-disconnected = <label-disconnected>
+label-connected =   
+label-disconnected =
 
+[module/alsa]
+type = internal/alsa
+master-soundcard = default
+speaker-soundcard = default
+;headphone-soundcard = default
+master-mixer = Master
+speaker-mixer = Speaker
+;headphone-mixer = Headphone
+mapped = true
+format-volume = <ramp-volume> 
+;<label-volume>
+label-muted =  
+label-muted-foreground = #66
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+;ramp-headphones-0 = 
+;ramp-headphones-1 = 
 
+[module/name]
+type = custom/text
+content = ThinkPad
+
+[module/updates-apt]
+type = custom/script
+label = 
+exec = ~/Documents/polybar/scripts/updates-apt.sh
+interval = 600
+
+[module/notification-reddit]
+type = custom/script
+exec = ~/.config/polybar-scripts/notification-reddit.sh
+interval = 60
+
+[module/system-bluetooth-bluetoothctl]
+type = custom/script
+exec = ~/Documents/polybar/scripts/system-bluetooth-bluetoothctl.sh
+tail = true
+click-left = ~/Documents/polybar/scripts/system-bluetooth-bluetoothctl.sh --toggle &
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = " "
+format = <label>
+exec = python ~/.config/polybar/scripts/spotify_status.py -f '{artist} - {song}'
+format-underline = #e00000
