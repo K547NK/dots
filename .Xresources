@@ -35,7 +35,7 @@
 *.color7:       #e2e2e5
 *.color15:      #e2e2e5
 
-UXTerm*faceName:Monospace
-UXTerm*faceSize:10
+*faceName:Monospace
+*faceSize:10
 
 URxvt*scrollBar:false
