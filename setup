@@ -10,7 +10,8 @@ sudo cp -r ~/freebsd/nigel.face.icon /usr/share/sddm/faces/
 mkdir ~/.config 
 mkdir ~/Documents
 mkdir -p ~/local/share/fonts
-
+sudo sysrc sddm_enable=YES
+sudo sysrc dbus_enable=YES
 cp -r H ~/Documents/
 cp -r .config/* ~/.config/
 cp .Xresources ~/
