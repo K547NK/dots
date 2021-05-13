@@ -12,6 +12,7 @@ mkdir ~/Documents
 mkdir -p ~/local/share/fonts
 sudo sysrc sddm_enable=YES
 sudo sysrc dbus_enable=YES
+sudo sysrc kld_list="/boot/modules/i915kms.ko"
 cp -r H ~/Documents/
 cp -r .config/* ~/.config/
 cp .Xresources ~/
