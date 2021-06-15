@@ -17,7 +17,7 @@ floating_modifier $mod
 bindsym $mod+Shift+q kill
 
 # start rofi
-bindsym $mod+d exec --no-startup-id rofi -show -show-icons run combi 
+bindsym $mod+d exec --no-startup-id rofi -show run combi 
 
 # change focus
 bindsym $mod+j focus left
@@ -71,7 +71,7 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "" 
+set $ws1 ""
 set $ws2 ""
 set $ws3 ""
 set $ws4 ""
@@ -144,9 +144,9 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-#bar {
-#   i3bar_command polybar &
-#
+bar {
+   i3bar_command polybar &
+}
 #Custom bindings for favorite apps and settings
 bindsym Mod1+r workspace $ws6; exec --no-startup-id uxterm -e ranger 
 bindsym Mod1+Shift+m workspace $ws8;exec mbsync google ;exec uxterm -e neomutt
@@ -159,9 +159,10 @@ bindsym Mod1+Shift+l exec sh ~/.config/i3/lock.sh
 bindsym Print exec scrot ~/Pictures/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png && feh ~/Pictures/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
 #exec --no-startup-id bash -c 'i3lock -i ~/Pictures/login.png'
 exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png &
-exec --no-startup-id picom &
-#exec --no-startup-id sh ~/.config/polybar/launch &
+exec --no-startup-id compton -i 1 &
+exec --no-startup-id sh ~/.config/polybar/launch &
 exec --no-startup-id sh ~/.config/i3/orientation.sh &
+exec --no-startup-id dunst &
 exec --no-startup-id mbsync google &
 #Specific Application-Workspace Assignment
 assign [class="MuPDF"] $ws7
