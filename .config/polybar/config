@@ -8,36 +8,42 @@ padding-right-size = 12
 module-margin = 3 
 border-left-size = 12
 border-top-size = 12
-radius = 22.8
-dpi = 112
+radius = 20 
+dpi = 128
 font-0 = OpenSans-Bold:size=9:antialias=true;2
-font-1 = FontAwesome5Free:style=Solid:pixelsize=12:antialias=true;4
-font-2 = FontAwesome5Brands:style=Solid:pixelsize=12:antialias=true;4
+font-1 = FontAwesome5Free:style=Solid:pixelsize=16:antialias=true;4
+font-2 = FontAwesome5Brands:style=Solid:pixelsize=16:antialias=true;4
 
 [bar/center]
 inherit = bar/main
-width = 400
+width = 100
 bottom = false 
-modules-center = date
+modules-center = wireless-network
 enable-ipc = true
-offset-x = 750
-background = #fffff
+offset-x = 700
+background = #70
 
 [bar/right]
 inherit = bar/main
-width = 350
+width = 120
 bottom = false 
-modules-center =  name
+modules-center = date
 enable-ipc = true
-offset-x = 1500
-background = #fffff
+offset-x = 1380
+background = #20
 
 [bar/left]
 inherit = bar/main
 bottom = false
-modules-center = i3 
-width = 500
-background = #80
+modules-center = batt
+width = 100 
+offset-x = 1280
+background = #20
+
+[module/net]
+type = custom/script
+exec = ~/.config/polybar/scripts/network-status.sh &
+interval = 1
 
 [module/battery]
 type = internal/battery
@@ -70,17 +76,17 @@ wrapping-scroll = false
 index-sort = true
 format = <label-state> <label-mode>
 label-mode = %mode%
-label-separator = |
-label-separator-padding = 2
-label-separator-foreground = #00
-label-separator-background= #00
+label-separator = ~ 
+label-separator-padding =  2 
+label-separator-foreground = #ff
+label-separator-background= #ff
 
 [module/date]
 type = internal/date
 interval = 1
 date = %m/%d
 time = %H:%M
-format =    <label>
+format =<label>
 label = %time%
 
 [module/cpu]
@@ -95,7 +101,7 @@ interval = 0.5
 format = <label> 
 label =   %percentage_used%%
 
-[module/network]
+[module/wireless-network]
 type = internal/network
 interface = wlan0
 interval = 5
@@ -124,6 +130,11 @@ ramp-volume-1 = 
 ramp-volume-2 = 
 ;ramp-headphones-0 = 
 ;ramp-headphones-1 = 
+
+[module/batt]
+type = custom/script
+exec = ~/.config/polybar/scripts/battery.sh
+interval = 6
 
 [module/name]
 type = custom/text
