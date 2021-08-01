@@ -1,7 +1,7 @@
 #!/bin/sh
 sudo pw user mod nigel -G wheel || sudo pw user mod nigel -G video
 #install both display manager and server also add window manager and compositor
-sudo pkg install drm-kmod i3-gaps sddm compton feh xorg scrot polybar i3lock neofetch lynx vim feh zsh rofi ImageMagick7
+sudo pkg install drm-kmod i3-gaps sddm compton feh xorg scrot polybar i3lock neofetch lynx vim feh zsh rofi ImageMagick7 py38-ranger chromium
 
 #details
 sudo mkdir -p /usr/share/sddm/faces/ 
