@@ -2,13 +2,8 @@
 sudo pw user mod nigel -G wheel || sudo pw user mod nigel -G video
 #install both display manager and server also add window manager and compositor
 sudo pkg install drm-kmod i3-gaps compton feh xorg scrot polybar i3lock neofetch lynx vim feh zsh rofi ImageMagick7 py38-ranger chromium
-
-#details
-sudo mkdir -p /usr/share/sddm/faces/ 
-sudo cp -r ~/freebsd/nigel.face.icon /usr/share/sddm/faces/
-#home directory
-mkdir ~/.config 
-mkdir ~/Documents
+#home directory basics
+mkdir ~/.config Documents Pictures Downloads Code
 #fonts
 mkdir -p ~/local/share/fonts
 #housecleaning
@@ -16,10 +11,8 @@ sudo sysrc sddm_enable=YES
 sudo sysrc dbus_enable=YES
 sudo sysrc kld_list="/boot/modules/i915kms.ko"
 #more home directroy nonsense
-cp -r H ~/Documents/
 cp -r .config/* ~/.config/
-cp .Xresources ~/
-cp .vimrc ~/
+cp .Xresources .vimrc ~/
 #font config
 cp -r ~/config/polybar/fonts/* ~/.local/share/fonts
 fc-cache -v
