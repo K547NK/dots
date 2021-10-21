@@ -8,3 +8,4 @@ If you've seen my other dotfiles then this is the daily grind ..
  • New changes to system deployment
  • Optimized scripts for mobile work stations 16:9
  • Removed PII from the config files
+ • Added homepage for web browsers
