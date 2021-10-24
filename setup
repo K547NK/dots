@@ -12,10 +12,8 @@ sudo sysrc dbus_enable=YES
 sudo sysrc kld_list="/boot/modules/i915kms.ko"
 #more home directroy nonsense
 cp -r .config/* ~/.config/
+cp -r .local/* ~/.local/
 cp .Xresources .vimrc ~/
-#font config
-cp -r ~/config/polybar/fonts/* ~/.local/share/fonts
-fc-cache -v
 #oh-my-zsh eye candy for zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
