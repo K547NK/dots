@@ -1,0 +1,54 @@
+[2021.10.24 11:54:25] Launched version: 2008011, install beta: [FALSE], alpha: 0, debug mode: [FALSE]
+[2021.10.24 11:54:25] Executable dir: , name: 
+[2021.10.24 11:54:25] Initial working dir: /usr/home/nigel/
+[2021.10.24 11:54:25] Working dir: /home/nigel/.local/share/TelegramDesktop/
+[2021.10.24 11:54:25] Command line: telegram-desktop
+[2021.10.24 11:54:25] Executable path before check: telegram-desktop
+[2021.10.24 11:54:25] WARNING: Could not compute executable path, some features will be disabled.
+[2021.10.24 11:54:25] Logs started
+[2021.10.24 11:54:25] Launcher filename: telegramdesktop.desktop
+[2021.10.24 11:54:26] Connecting local socket to /var/run/user/1001/b953975aa9c5bc16907c6b38874e40e8-{87A94AB0-E370-4cde-98D3-ACC110C5967D}...
+[2021.10.24 11:54:26] This is the only instance of Telegram, starting server and app...
+[2021.10.24 11:54:26] Moved logging from '/home/nigel/.local/share/TelegramDesktop/log_start0.txt' to '/home/nigel/.local/share/TelegramDesktop/log.txt'!
+[2021.10.24 11:54:26] Primary screen DPI: 96.063
+[2021.10.24 11:54:26] Font: from ':/gui/fonts/DAOpenSansRegular.ttf' loaded 'DAOpenSansRegular'
+[2021.10.24 11:54:26] Font: from ':/gui/fonts/DAVazirRegular.ttf' loaded 'DAVazirRegular'
+[2021.10.24 11:54:26] Font: from ':/gui/fonts/DAOpenSansRegularItalic.ttf' loaded 'DAOpenSansRegularItalic'
+[2021.10.24 11:54:26] Font: from ':/gui/fonts/DAVazirRegular.ttf' loaded 'DAVazirRegular'
+[2021.10.24 11:54:26] Font: from ':/gui/fonts/DAOpenSansSemiboldAsBold.ttf' loaded 'DAOpenSansSemibold'
+[2021.10.24 11:54:26] Font: from ':/gui/fonts/DAVazirMediumAsBold.ttf' loaded 'DAVazirMedium'
+[2021.10.24 11:54:26] Font: from ':/gui/fonts/DAOpenSansSemiboldItalicAsBold.ttf' loaded 'DAOpenSansSemiboldItalic'
+[2021.10.24 11:54:26] Font: from ':/gui/fonts/DAVazirMediumAsBold.ttf' loaded 'DAVazirMedium'
+[2021.10.24 11:54:26] Font: from ':/gui/fonts/DAOpenSansSemiboldAsBold.ttf' loaded 'DAOpenSansSemibold'
+[2021.10.24 11:54:26] Font: from ':/gui/fonts/DAVazirMediumAsBold.ttf' loaded 'DAVazirMedium'
+[2021.10.24 11:54:26] Font: from ':/gui/fonts/DAOpenSansSemiboldItalicAsBold.ttf' loaded 'DAOpenSansSemiboldItalic'
+[2021.10.24 11:54:26] Font: from ':/gui/fonts/DAVazirMediumAsBold.ttf' loaded 'DAVazirMedium'
+[2021.10.24 11:54:26] App Info: reading settings...
+[2021.10.24 11:54:26] App Info: reading encrypted settings...
+[2021.10.24 11:54:26] OpenAL Logging Level: (not set)
+[2021.10.24 11:54:26] Audio Playback Devices: OSS Default;pcm0:play:dsp0;pcm2:play:dsp2;pcm3:play:dsp3;pcm4:play:dsp4
+[2021.10.24 11:54:26] Audio Playback Default Device: OSS Default
+[2021.10.24 11:54:26] Audio Capture Devices: OSS Default;pcm0:record:dsp0;pcm1:record:dsp1
+[2021.10.24 11:54:26] Audio Capture Default Device: OSS Default
+[2021.10.24 11:54:26] Not using D-Bus global menu.
+[2021.10.24 11:54:26] Not using Unity launcher counter.
+[2021.10.24 11:54:26] System tray available: [FALSE]
+[2021.10.24 11:54:26] App Info: reading accounts info...
+[2021.10.24 11:54:26] App Info: reading encrypted info...
+[2021.10.24 11:54:26] App Info: reading map...
+[2021.10.24 11:54:26] App Info: reading encrypted map...
+[2021.10.24 11:54:26] App Info: could not read encrypted user settings...
+[2021.10.24 11:54:26] App Info: writing encrypted user settings...
+[2021.10.24 11:54:26] App Info: reading encrypted mtp data...
+[2021.10.24 11:54:26] MTP Info: read keys, current: 3, to destroy: 0
+[2021.10.24 11:54:26] Map read time: 1
+[2021.10.24 11:54:26] App Info: reading encrypted mtp config...
+[2021.10.24 11:54:26] Export Info: Destroy top bar by controller removal.
+[2021.10.24 11:54:26] OpenGL Profile: None.
+[2021.10.24 11:54:26] OpenGL: [FALSE] (OverlayWidget)
+[2021.10.24 11:54:28] Message Info: bad message notification received (error_code 33) for msg_id = 7022677272713079424, seq_no = 32
+[2021.10.24 11:54:28] Message Info: bad message notification received, msgId 7022677272713079424, error_code 33
+[2021.10.24 11:54:40] OpenGL: [FALSE] (Ui::GL::Window)
+[2021.10.24 11:55:01] Audio Info: recreating audio device and reattaching the tracks
+[2021.10.24 11:55:03] Audio Info: Closing audio playback device.
+[2021.10.24 12:09:12] Api::Updates prevents quit, sending offline status...

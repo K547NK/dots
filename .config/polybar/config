@@ -1,0 +1,44 @@
+[bar/main]
+override-redirect = true
+wm-restack = i3
+bottom = false
+height = 40
+module-margin =1 
+padding = 5.5 
+background = #00FFFFFF 
+dpi = 128
+font-0 = Iosevka-Bold:size=8:antialias=true;2
+font-1 = FontAwesome5Free:style=Solid:pixelsize=12:antialias=true;4
+font-2 = FontAwesome5Brands:style=Solid:pixelsize=12:antialias=true;4
+modules-center =
+modules-left = i3
+modules-right = date power wireless-networks
+
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+wrapping-scroll = false
+index-sort = true
+format = <label-state> <label-mode>
+label-mode = %mode%
+label-separator = -
+label-separator-padding = 1 
+
+[module/date]
+type = internal/date
+interval = 1
+date = %m/%d
+time = %H:%M
+format =<label>
+label = %time% • %date%
+
+
+[module/power]
+type = custom/script
+exec = ~/.config/polybar/scripts/system-status/power.sh
+interval = 6
+
+[module/wireless-networks]
+type = custom/script
+exec = ~/.config/polybar/scripts/system-status/wireless-network.sh
+interval = 5
