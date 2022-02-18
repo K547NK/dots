@@ -1,5 +1,5 @@
 #!/bin/sh
 
-status=$(ifconfig wlan0 | grep ssid | cut -c -25 | cut -c 7-)
+status=$(ifconfig wlan0 | grep ssid | awk '{print $2}')
 
 echo -n $status
