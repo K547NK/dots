@@ -1,23 +1,15 @@
 #!/bin/sh
 sudo pw user mod nigel -G wheel || sudo pw user mod nigel -G video
-#install both display manager and server also add window manager and compositor
-sudo pkg install drm-kmod i3-gaps sddm compton feh w3m xorg scrot polybar i3lock neofetch lynx vim feh zsh rofi ImageMagick7 py38-ranger firefox
-#home directory basics
+sudo pkg install drm-kmod i3-gaps sddm compton feh w3m-img xorg scrot polybar i3lock neofetch lynx vim feh zsh rofi ImageMagick7 py38-ranger iosevka firefox
 cd ~/
-mkdir .config .local .cache .homepage Documents Pictures Downloads Code
+mkdir .config .local .cache .homepage Documents Pictures Downloads Code      #home directory basics
 cd ..
-#fonts
-mkdir -p ~/.local/share/fonts
-#housecleaning
-sudo sysrc sddm_enable=YES
+mkdir -p ~/.local/share/fonts     #fonts
+sudo sysrc sddm_enable=YES  #Setting up the system wide utils
 sudo sysrc dbus_enable=YES
 sudo sysrc kld_list="/boot/modules/i915kms.ko cuse"
 sudo sysrc webcam_enable=YES
-
-#more home directroy nonsense
-cp -r .config/* ~/.config/
+cp -r .config/* ~/.config/       #more home directroy nonsense
 cp -r .local/* ~/.local/
 cp .Xresources .vimrc ~/
-#oh-my-zsh eye candy for zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"  #oh-my-zsh eye candy for zsh
