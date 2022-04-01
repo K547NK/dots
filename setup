@@ -11,7 +11,8 @@ sudo sysrc kld_list="/boot/modules/i915kms.ko cuse"
 sudo sysrc webcam_enable=YES
 cp -r .config/* ~/.config/       #more home directroy nonsense
 cp -r .local/* ~/.local/
-cp .Xresources .vimrc ~/
+cp .Xresources ~/
+cp .vimrc ~/
 cd Code/
 git clone https://github.com/K547NK/Elegant-sddm.git
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"  #oh-my-zsh eye candy for zsh
