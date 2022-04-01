@@ -1,15 +1,15 @@
 #!/bin/sh
-sudo pw user mod nigel -G wheel || sudo pw user mod nigel -G video
-sudo pkg install gh drm-kmod i3-gaps sddm compton feh w3m-img xorg scrot polybar i3lock neofetch lynx vim feh zsh rofi ImageMagick7 py38-ranger iosevka firefox
-cd ~/
-mkdir .config .local .cache .homepage Documents Pictures Downloads Code      #home directory basics
-cd ..
-mkdir -p ~/.local/share/fonts     #fonts
-sudo sysrc sddm_enable=YES  #Setting up the system wide utils
+sudo sysrc ifconfig_iwn0="wlan0"  				# To set up wireless ethernet with Intel WiFi Cards
+sudo sysrc ifconfig_wlan0="DHCP WPA"
+sudo sysrc sddm_enable=YES  					# Setting up the system wide utils
 sudo sysrc dbus_enable=YES
 sudo sysrc kld_list="/boot/modules/i915kms.ko cuse"
-sudo sysrc webcam_enable=YES
-cp -r .config/* ~/.config/       #more home directroy nonsense
+cd ~/
+mkdir -p ~/.local/share/fonts .config .cache .newsboat Documents Pictures Downloads Code   #home directory basics
+sudo pw user mod nigel -G wheel || sudo pw user mod nigel -G video
+sudo pkg install gh drm-kmod i3-gaps sddm compton feh w3m-img xorg scrot polybar i3lock neofetch lynx vim feh zsh rofi ImageMagick7 py38-ranger iosevka firefox
+cd ..
+cp -r .config/* ~/.config/    					# More home directroy nonsense
 cp -r .local/* ~/.local/
 cp .Xresources ~/
 cp .vimrc ~/
