@@ -1,6 +1,9 @@
 #!/bin/sh
+sudo echo 'if_iwn_load="YES"'>> /boot/loader.conf
+sudo echo 'acpi_ibm_load="YES"'>> /boot/loader.conf
+sudo sysctl acpi_video_load="YES"
 sudo sysrc ifconfig_iwn0="wlan0"  				# To set up wireless ethernet with Intel WiFi Cards
-sudo sysrc ifconfig_wlan0="DHCP WPA"
+sudo sysrc ifconfig_wlan0="SYNCDHCP WPA"
 sudo sysrc sddm_enable=YES  					# Setting up the system wide utils
 sudo sysrc dbus_enable=YES
 sudo sysrc kld_list="/boot/modules/i915kms.ko cuse"
