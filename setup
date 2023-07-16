@@ -1,7 +1,7 @@
 #!/bin/sh
-sudo echo 'if_iwn_load="YES"'>> /boot/loader.conf
-sudo echo 'acpi_ibm_load="YES"'>> /boot/loader.conf
-sudo echo 'acpi_video_load="YES"' >> /boot/loader.conf
+#sudo echo 'if_iwn_load="YES"'>> /boot/loader.conf
+#sudo echo 'acpi_ibm_load="YES"'>> /boot/loader.conf
+#sudo echo 'acpi_video_load="YES"' >> /boot/loader.conf
 sudo sysrc wlans_iwn0="wlan0"  				# To set up wireless ethernet with Intel WiFi Cards
 sudo sysrc ifconfig_wlan0="SYNCDHCP WPA"
 sudo sysrc sddm_enable='YES'  					# Setting up the system wide utils
@@ -10,8 +10,7 @@ sudo sysrc kld_list="/boot/modules/i915kms.ko cuse"
 cd ~/
 mkdir -p ~/.local/share/fonts .config .cache .newsboat Documents Pictures Downloads Code   #home directory basics
 sudo pw user mod nigel -G wheel || sudo pw user mod nigel -G video
-sudo pkg install --yes gh drm-kmod i3-gaps sddm compton feh w3m-img xorg scrot polybar i3lock neofetch lynx vim feh zsh rofi ImageMagick7 iosevka pkgconf gmake gcc evdev-proto cmake wayland-protocols wayland libglvnd libxkbcommon libinput cairo pango pixman libxcb
-pkg install meson jq `pkg rquery %dn wlroots` hwdata libdisplay-info libliftoff
+sudo pkg install --yes gh drm-kmod i3 sddm compton feh w3m-img xorg scrot polybar i3lock neofetch lynx vim feh zsh rofi ImageMagick7 iosevka pkgconf gmake gcc evdev-proto cmake wayland-protocols wayland libglvnd libxkbcommon libinput cairo pango pixman libxcbmeson jq `pkg rquery %dn wlroots` hwdata libdisplay-info libliftoff
 export CC=gcc CXX=g++ LDFLAGS="-static-libstdc++ -static-libgcc"
 cd ..
 cp -r .config/* ~/.config/    					# More home directroy nonsense
